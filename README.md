@@ -75,7 +75,7 @@ _Please Note: In my environment, the internal IP of VSI instance is 10.209.85.19
 ### Add ssh key in your mac machine for quick login
 - From client (Mac), use ssh-add <private-key>
 - Edit /etc/hosts (Map public IP of VSI = ocphelper)
-- Create ~/.ssh/config file and add something like this : </br>
+- Create ~/.ssh/config file and add something like this : 
 ```
 Host ocphelper
 	    HostName ocphelper
@@ -83,8 +83,7 @@ Host ocphelper
 	    User root
 ```      
 Now "ssh ocphelper" should work without password.
-</br>
-</br>
+
 
 ### Setup NAT router for Helper Node
 - Establish the names of public and private interfaces with ip addr, we will assume eth1 is public and eth0 is private.
@@ -109,7 +108,7 @@ Now "ssh ocphelper" should work without password.
 
 ### Configure Cluster DNS Service on Helper Node
 
-Use BIND set up on the VSI. </br>
+Use BIND set up on the VSI. 
 1. Install bind on Helper Node <code>yum install bind bind-utils</code>
 2. Edit /etc/named.conf and create an access control list by adding the following to the top of the file, where XXX is your private subnet CIDR:
 ```
@@ -221,7 +220,7 @@ Test name resolution from your local server.
 
 ## Step 2 Provision 7 Baremetal servers.
 
-Use following process: </br>
+Use following process: 
 
 - Click on Catalog, Left navigation compute -> Bare Metal Servers
 - Select the servers, as mentioned in the screenshots
@@ -664,6 +663,6 @@ If you own the Domain Name and you have updated the DNS records, as mentioned in
 - https://docs.openshift.com/container-platform/4.5/installing/installing_bare_metal/installing-bare-metal.html
 
 - Special Thanks for the following document. Most of content is reused from following two URLs. 
-https://github.com/IBMIntegration/IBM-CP4I-OpenShift-BareMetal-Native </br>
-https://www.openshift.com/blog/openshift-4-bare-metal-install-quickstart </br>
+https://github.com/IBMIntegration/IBM-CP4I-OpenShift-BareMetal-Native 
+https://www.openshift.com/blog/openshift-4-bare-metal-install-quickstart 
 -------

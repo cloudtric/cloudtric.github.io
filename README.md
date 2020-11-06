@@ -16,13 +16,13 @@ No hypervisor is used in this setup.
 
 ## Preparation
 __Domain Name__
-</br>
+
 Make sure you decide on domain name for your cluster.
 In this document, I have chosen __ibmgsi.com__.
 It is good to have this domain name registered and you have control on update the DNS records. Though it is not mandatory. If you don't own the domain, then you may need to update clients /etc/hosts to point routes to LB external IP. In my case, I own the domain, and I would be able to access load balancers from any client. (For more details, check the Step # 3,Load Balancer configuration).
 
 __Cluster Name__
-</br>
+
 In this case its __mycluster__.
 
 Baremetal servers would have following hostnames.
@@ -51,18 +51,16 @@ No need to provide passphrase. Enter Twice.
 ```
 
 ### Create a VLAN in your DC (Say Dallas13 in this case)
-Create a new private vlan, using Catalog -> services -> VLANs -> Create. </br>
+Create a new private vlan, using Catalog -> services -> VLANs -> Create. 
 Select you data center (example Dallas13), name (example OCP45BMVLAN) -> create.
 
 
 Please make sure all servers use this VLAN
 
 Also please note down the CIDR, on the new VLAN page.
-</br>
-</br>
+
 ![subnet](/images/subnet.png)
-</br>
-</br>
+
 
 ### Provision Virtual Server Instance as helper Node
 - Select Catalog -> Services -> Compute -> Virtual Server for Classic
@@ -217,8 +215,7 @@ nameserver 10.0.80.11
 ```
 Use Helper Node Private IP as nameserver.
 Test name resolution from your local server.
-</br>
-</br>
+
 
 ----------
 
@@ -256,16 +253,14 @@ Openshift requires load balancers for bootstrap related traffic, for control pla
 
 Go to Catalog -> Left Navigation -> Classic Infrastructure -> Load Balancing
 Create these four entries:
-</br>
-</br>
+
 ![Load Balancer](/images/lb3.png)
-</br>
-</br>
+
 
 Please make sure you use TCP as a protocol for LBs.
-</br>
+
 ![Load Balancer](/images/lb2.png)
-</br>
+
 ### Accessing Load Balancers Externally
 We also need to make sure, domain names are updated with the external IP address of LB.
 
@@ -350,8 +345,8 @@ Place the files in the appropriate locations
 - Copy the installer ISO `rhcos-<version>-x86_64-installer.x86_64.iso` to the SMB share e.g. `/share/coreos`
 - Copy the disc image `rhcos-<version>-x86_64-metal.x86_64.raw.gz` to the HTML server directory `/var/www/html`
 
-In my installation, I have used OpenShift 4.5.6. </br>
-Files : </br>
+In my installation, I have used OpenShift 4.5.6. 
+Files : 
 - `rhcos-4.5.6-x86_64-installer.x86_64.iso`
 - `rhcos-4.5.6-x86_64-metal.x86_64.raw.gz`
 
@@ -667,8 +662,8 @@ If you own the Domain Name and you have updated the DNS records, as mentioned in
 ## Resources
 - Installation Document from RH
 - https://docs.openshift.com/container-platform/4.5/installing/installing_bare_metal/installing-bare-metal.html
-</br>
-- Special Thanks for the following document. Most of content is reused from following two URLs. </br>
+
+- Special Thanks for the following document. Most of content is reused from following two URLs. 
 https://github.com/IBMIntegration/IBM-CP4I-OpenShift-BareMetal-Native </br>
 https://www.openshift.com/blog/openshift-4-bare-metal-install-quickstart </br>
 -------

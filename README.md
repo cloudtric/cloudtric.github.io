@@ -239,7 +239,7 @@ Use following process:
 
 ## Step 3 Configure Load balancers and Domain
 
-Openshift requires load balancers for bootstrap related traffic, for control plane traffic, and for ingress traffic i.e. access to the user applications.  This guide uses the IBM local load banalcer service and will create four instances:
+Openshift requires load balancers for bootstrap related traffic, for control plane traffic, and for ingress traffic i.e. access to the user applications.  This guide uses the IBM local load balancer service and will create four instances:
 
 | Name             | Type                | Servers            | Ports       |
 | -----------------| --------------------|--------------------|-------------|

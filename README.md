@@ -625,20 +625,21 @@ operator-lifecycle-manager-catalog         4.5.7     True        False         F
 operator-lifecycle-manager-packageserver   4.5.7     True        False         False      4h1m
 service-ca                                 4.5.7     True        False         False      8h
 storage                                    4.5.7     True        False         False      3h54m
+
 ```
 If you run into same issue:
-- Run command `oc get csr` Check if all csr are Approved or Pending.
+- Run command 'oc get csr' Check if all csr are Approved or Pending.
 - If Pending, you can approve them manually using following command.
-- `oc get csr -o go-template='{{range .items}}{{if not .status}}{{.metadata.name}}{{"\n"}}{{end}}{{end}}' | xargs oc adm certificate approve`
+- "oc get csr -o go-template='{{range .items}}{{if not .status}}{{.metadata.name}}{{"\n"}}{{end}}{{end}}' | xargs oc adm certificate approve"
 - Please check the csr status few times, if new csr is created, you need to approve that as well.
-- Run command `oc get clusteroperator` Check if AVAILABLE is true for all operators.
+- Run command 'oc get clusteroperator' Check if AVAILABLE is true for all operators.
 
 ------
 
 ## Step 13 : Access the OCP console
 
 In previous step we ran following command.
-- `openshift-install --dir=install01 wait-for install-complete --log-level=debug`
+- 'openshift-install --dir=install01 wait-for install-complete --log-level=debug'
 - This should show you following message on successful install.
 
 ```

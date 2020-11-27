@@ -627,6 +627,7 @@ service-ca                                 4.5.7     True        False         F
 storage                                    4.5.7     True        False         False      3h54m
 
 ```
+
 If you run into same issue:
 - Run command 'oc get csr' Check if all csr are Approved or Pending.
 - If Pending, you can approve them manually using following command.
@@ -643,6 +644,7 @@ In previous step we ran following command.
 - This should show you following message on successful install.
 
 ```
+
 DEBUG Cluster is initialized                       
 INFO Waiting up to 10m0s for the openshift-console route to be created...
 DEBUG Route found in openshift-console namespace: console
@@ -653,11 +655,12 @@ INFO To access the cluster as the system:admin user when using 'oc', run 'export
 INFO Access the OpenShift web-console here: https://console-openshift-console.apps.mycluster.ibmgsi.com
 INFO Login to the console with user: "kubeadmin", and password: "xxxxx-xxxxx-xxxxx-xxxxx"
 INFO Time elapsed: 0s                 
+
 ```
 
 If you own the Domain Name and you have updated the DNS records, as mentioned in Step # 3, you are good to connect to console or access any route. Else you may need to update /etc/hosts, on your client machine (e.g.mac) and add console route with external load balancer IP address.
 
------
+------
 
 ## Resources
 - Installation Document from RH
@@ -666,4 +669,5 @@ If you own the Domain Name and you have updated the DNS records, as mentioned in
 - Special Thanks for the following document. Most of content is reused from following two URLs. 
 https://github.com/IBMIntegration/IBM-CP4I-OpenShift-BareMetal-Native 
 https://www.openshift.com/blog/openshift-4-bare-metal-install-quickstart 
+
 -------

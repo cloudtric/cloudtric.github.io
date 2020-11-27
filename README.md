@@ -536,7 +536,7 @@ __Look at this page for more information__
 [How to reduce typing on IPMI Console](https://www.sythe.org/threads/auto-typer-script-for-mac/)
 
 
-### Step 10.3 IPMI Console, complete the installation and make sure server boots with CoreOS.
+### Step 10.4 IPMI Console, complete the installation and make sure server boots with CoreOS.
 
 Once the installation is complete, the server would reboot.
 During re-boot, make sure you unmount CDROM, so that server would follow normal boot sequence of CoreOS.
@@ -545,13 +545,15 @@ During re-boot, make sure you unmount CDROM, so that server would follow normal 
 At this moment, your bootstrap server has completed installation.
 
 - Monitor the bootstrap process with `openshift-install --dir=install01 wait-for bootstrap-complete --log-level=debug`
-----
+
+------
 
 ## Step 11 Install CoreOS on Master and Worker Nodes.
 
 - Follow 10.1, 10.2, 10.3 for all masters and worker nodes.
 - Use following parameters depending on which node you are Configuring.
 - For Baremetal2 which is master node
+
 ```
 BAREMETAL2 => Master Node 1
 ip=10.209.85.242::10.209.85.195:255.255.255.192:baremetal2:eno1:none:10.209.85.195 coreos.inst.install_dev=sda coreos.inst.image_url=http://10.209.85.195/rhcos-4.5.2-x86_64-metal.x86_64.raw.gz coreos.inst.ignition_url=http://10.209.85.195/baremetal2.ign

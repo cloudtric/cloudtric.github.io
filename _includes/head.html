@@ -33,10 +33,9 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'G-JD8T69VZ7Z',{ 
-  cookie_domain: 'cloudtric.github.io',
-  cookie_flags: 'SameSite=None;Secure', });
+  gtag('config', 'G-JD8T69VZ7Z');
+  gtag('set',{cookie_domain: 'cloudtric.github.io'});
+  gtag('set',{cookie_flags: 'SameSite=None;Secure' });
 </script>
   {% endif %}
 </head>
